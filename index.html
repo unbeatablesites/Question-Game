@@ -17,8 +17,18 @@
       { q: 'The Declaration of Independence was created in 1745.', a: 'f' },
       { q: 'Bananas are vegetables.', a: 'f' }
     ];
-
     var score = 0;
     var questionIndex = 0;
+
+    function renderQuestion() {
+      if (questionIndex <= questions.length - 1) {
+        document.querySelector('#question').innerHTML =
+          questions[questionIndex].q;
+      } else {
+        document.querySelector('#question').innerHTML = 'Game Over!';
+        document.querySelector('#score').innerHTML =
+          'Final Score: ' + score + ' out of ' + questions.length;
+      }
+    }
   </script>
 </html>
