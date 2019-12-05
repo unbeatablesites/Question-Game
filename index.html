@@ -37,5 +37,26 @@
 
     renderQuestion();
     updateScore();
+
+    document.onkeyup = function(event) {
+      if (questionIndex === questions.length) {
+        return;
+      }
+
+      var userInput = event.key.toLowerCase();
+
+      if (userInput === 't' || userInput === 'f') {
+        if (userInput === questions[questionIndex].a) {
+          alert('Correct!');
+          score++;
+          updateScore();
+        } else {
+          alert('Wrong!');
+        }
+
+        questionIndex++;
+        renderQuestion();
+      }
+    };
   </script>
 </html>
