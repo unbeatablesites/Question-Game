@@ -22,10 +22,10 @@
 
     function renderQuestion() {
       if (questionIndex <= questions.length - 1) {
-        document.querySelector('#question').innerHTML =
+        document.querySelector('#questions').innerHTML =
           questions[questionIndex].q;
       } else {
-        document.querySelector('#question').innerHTML = 'Game Over!';
+        document.querySelector('#questions').innerHTML = 'Game Over!';
         document.querySelector('#score').innerHTML =
           'Final Score: ' + score + ' out of ' + questions.length;
       }
